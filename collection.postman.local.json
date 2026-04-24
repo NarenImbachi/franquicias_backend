@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "YOUR_POSTMAN_COLLECTION_ID_HERE",
-		"name": "Franquicias API Desplegada - Datos de Prueba",
+		"name": "Franquicias API - Datos de Prueba",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_collection_id": "YOUR_POSTMAN_COLLECTION_ID_HERE"
 	},
@@ -12,14 +12,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://franquiciasbackend-production.up.railway.app/h2-console",
-					"protocol": "https",
+					"raw": "http://localhost:8080/h2-console",
+					"protocol": "http",
 					"host": [
-						"franquiciasbackend-production",
-						"up",
-						"railway",
-						"app"
+						"localhost"
 					],
+					"port": "8080",
 					"path": [
 						"h2-console"
 					]
@@ -46,14 +44,12 @@
 							"raw": "{\n    \"name\": \"Franquicia Global\"\n}"
 						},
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/franchises",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/franchises",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"franchises"
@@ -78,14 +74,12 @@
 							"raw": "{\n    \"newName\": \"Franquicia Mundial\"\n}"
 						},
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/franchises/1/name",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/franchises/1/name",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"franchises",
@@ -117,14 +111,12 @@
 							"raw": "{\n    \"name\": \"Sucursal Centro\"\n}"
 						},
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/franchises/1/branches",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/franchises/1/branches",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"franchises",
@@ -151,14 +143,12 @@
 							"raw": "{\n    \"name\": \"Sucursal Norte\"\n}"
 						},
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/franchises/1/branches",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/franchises/1/branches",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"franchises",
@@ -185,14 +175,12 @@
 							"raw": "{\n    \"name\": \"Sucursal Sur\"\n}"
 						},
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/franchises/1/branches",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/franchises/1/branches",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"franchises",
@@ -219,14 +207,12 @@
 							"raw": "{\n    \"newName\": \"Sucursal Norte Renovada\"\n}"
 						},
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/2/name",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/branches/2/name",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"branches",
@@ -261,14 +247,12 @@
 									"raw": "{\n    \"name\": \"Laptop X1\",\n    \"stock\": 50\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/1/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/1/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -295,14 +279,12 @@
 									"raw": "{\n    \"name\": \"Teclado Mecánico\",\n    \"stock\": 120\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/1/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/1/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -329,14 +311,12 @@
 									"raw": "{\n    \"name\": \"Mouse Óptico\",\n    \"stock\": 80\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/1/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/1/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -368,14 +348,12 @@
 									"raw": "{\n    \"name\": \"Monitor Curvo\",\n    \"stock\": 30\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/2/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/2/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -402,14 +380,12 @@
 									"raw": "{\n    \"name\": \"Webcam HD\",\n    \"stock\": 60\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/2/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/2/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -436,14 +412,12 @@
 									"raw": "{\n    \"name\": \"Auriculares Gaming\",\n    \"stock\": 75\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/2/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/2/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -475,14 +449,12 @@
 									"raw": "{\n    \"name\": \"Silla Ergonómica\",\n    \"stock\": 20\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/3/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/3/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -509,14 +481,12 @@
 									"raw": "{\n    \"name\": \"Escritorio Gamer\",\n    \"stock\": 15\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/3/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/3/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -543,14 +513,12 @@
 									"raw": "{\n    \"name\": \"Cable HDMI 4K\",\n    \"stock\": 150\n}"
 								},
 								"url": {
-									"raw": "https://franquiciasbackend-production.up.railway.app/api/branches/3/products",
-									"protocol": "https",
+									"raw": "http://localhost:8080/api/branches/3/products",
+									"protocol": "http",
 									"host": [
-										"franquiciasbackend-production",
-										"up",
-										"railway",
-										"app"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"api",
 										"branches",
@@ -584,14 +552,12 @@
 							"raw": "{\n    \"newName\": \"Laptop Gamer Elite\"\n}"
 						},
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/products/1/name",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/products/1/name",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"products",
@@ -618,14 +584,12 @@
 							"raw": "{\n    \"newStock\": 150\n}"
 						},
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/products/2/stock",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/products/2/stock",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"products",
@@ -643,14 +607,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/franchises/1/products/top-stock",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/franchises/1/products/top-stock",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"franchises",
@@ -669,14 +631,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://franquiciasbackend-production.up.railway.app/api/products/3",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/products/3",
+							"protocol": "http",
 							"host": [
-								"franquiciasbackend-production",
-								"up",
-								"railway",
-								"app"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"api",
 								"products",
@@ -713,7 +673,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://franquiciasbackend-production.up.railway.app/api",
+			"value": "http://localhost:8080/api",
 			"type": "string"
 		}
 	]
