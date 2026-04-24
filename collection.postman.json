@@ -1,0 +1,680 @@
+{
+	"info": {
+		"_postman_id": "YOUR_POSTMAN_COLLECTION_ID_HERE",
+		"name": "Franquicias API - Datos de Prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_collection_id": "YOUR_POSTMAN_COLLECTION_ID_HERE"
+	},
+	"item": [
+		{
+			"name": "0. Setup Inicial (Limpiar DB)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/h2-console",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"h2-console"
+					]
+				}
+			},
+			"response": [],
+			"description": "NOTA: Si usas 'create-drop' en Hibernate, puedes obviar esto. Si no, y quieres reiniciar la base de datos, tendrías que ejecutar un script SQL para truncar tablas o similar. Esta request es solo un placeholder, no funcionará por sí sola."
+		},
+		{
+			"name": "1. Creación de Franquicia (ID: 1)",
+			"item": [
+				{
+					"name": "Crear Franquicia 'Franquicia Global'",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Franquicia Global\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franchises",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franchises"
+							]
+						},
+						"description": "Crea la primera franquicia. ID esperado: 1"
+					},
+					"response": []
+				},
+				{
+					"name": "PLUS: Actualizar Nombre Franquicia 1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newName\": \"Franquicia Mundial\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franchises/1/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franchises",
+								"1",
+								"name"
+							]
+						},
+						"description": "Actualiza el nombre de la Franquicia con ID 1."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Creación de Sucursales (para Franquicia ID: 1)",
+			"item": [
+				{
+					"name": "Crear Sucursal 'Centro' (ID: 1)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sucursal Centro\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franchises/1/branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franchises",
+								"1",
+								"branches"
+							]
+						},
+						"description": "Agrega una sucursal a la Franquicia con ID 1. ID esperado: 1"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Sucursal 'Norte' (ID: 2)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sucursal Norte\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franchises/1/branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franchises",
+								"1",
+								"branches"
+							]
+						},
+						"description": "Agrega una segunda sucursal a la Franquicia con ID 1. ID esperado: 2"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Sucursal 'Sur' (ID: 3)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sucursal Sur\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/franchises/1/branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franchises",
+								"1",
+								"branches"
+							]
+						},
+						"description": "Agrega una tercera sucursal a la Franquicia con ID 1. ID esperado: 3"
+					},
+					"response": []
+				},
+				{
+					"name": "PLUS: Actualizar Nombre Sucursal 2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newName\": \"Sucursal Norte Renovada\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/branches/2/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"branches",
+								"2",
+								"name"
+							]
+						},
+						"description": "Actualiza el nombre de la Sucursal con ID 2."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Creación de Productos (para cada Sucursal)",
+			"item": [
+				{
+					"name": "Productos para Sucursal Centro (ID: 1)",
+					"item": [
+						{
+							"name": "Producto 'Laptop X1' (Stock: 50, ID: 1)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Laptop X1\",\n    \"stock\": 50\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/1/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"1",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Centro (ID 1). ID esperado: 1"
+							},
+							"response": []
+						},
+						{
+							"name": "Producto 'Teclado Mecánico' (Stock: 120, ID: 2)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Teclado Mecánico\",\n    \"stock\": 120\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/1/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"1",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Centro (ID 1). ID esperado: 2"
+							},
+							"response": []
+						},
+						{
+							"name": "Producto 'Mouse Óptico' (Stock: 80, ID: 3)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Mouse Óptico\",\n    \"stock\": 80\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/1/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"1",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Centro (ID 1). ID esperado: 3"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Productos para Sucursal Norte (ID: 2)",
+					"item": [
+						{
+							"name": "Producto 'Monitor Curvo' (Stock: 30, ID: 4)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Monitor Curvo\",\n    \"stock\": 30\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/2/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"2",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Norte (ID 2). ID esperado: 4"
+							},
+							"response": []
+						},
+						{
+							"name": "Producto 'Webcam HD' (Stock: 60, ID: 5)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Webcam HD\",\n    \"stock\": 60\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/2/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"2",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Norte (ID 2). ID esperado: 5"
+							},
+							"response": []
+						},
+						{
+							"name": "Producto 'Auriculares Gaming' (Stock: 75, ID: 6)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Auriculares Gaming\",\n    \"stock\": 75\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/2/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"2",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Norte (ID 2). ID esperado: 6"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Productos para Sucursal Sur (ID: 3)",
+					"item": [
+						{
+							"name": "Producto 'Silla Ergonómica' (Stock: 20, ID: 7)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Silla Ergonómica\",\n    \"stock\": 20\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/3/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"3",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Sur (ID 3). ID esperado: 7"
+							},
+							"response": []
+						},
+						{
+							"name": "Producto 'Escritorio Gamer' (Stock: 15, ID: 8)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Escritorio Gamer\",\n    \"stock\": 15\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/3/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"3",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Sur (ID 3). ID esperado: 8"
+							},
+							"response": []
+						},
+						{
+							"name": "Producto 'Cable HDMI 4K' (Stock: 150, ID: 9)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Cable HDMI 4K\",\n    \"stock\": 150\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/branches/3/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"branches",
+										"3",
+										"products"
+									]
+								},
+								"description": "Producto para Sucursal Sur (ID 3). ID esperado: 9"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "4. Operaciones de Modificación/Consulta (Usando IDs Creados)",
+			"item": [
+				{
+					"name": "PLUS: Actualizar Nombre Producto 1 (Laptop X1)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newName\": \"Laptop Gamer Elite\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/1/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"1",
+								"name"
+							]
+						},
+						"description": "Actualiza el nombre del Producto con ID 1."
+					},
+					"response": []
+				},
+				{
+					"name": "6. Modificar Stock Producto 2 (Teclado Mecánico)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newStock\": 150\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/2/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"2",
+								"stock"
+							]
+						},
+						"description": "Modifica el stock del Producto con ID 2 a 150."
+					},
+					"response": []
+				},
+				{
+					"name": "7. Producto con Más Stock por Sucursal (Franquicia Global ID: 1)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/franchises/1/products/top-stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"franchises",
+								"1",
+								"products",
+								"top-stock"
+							]
+						},
+						"description": "Retorna el producto con más stock para cada sucursal de la Franquicia ID 1. Se espera: Teclado Mecánico (Sucursal Centro), Auriculares Gaming (Sucursal Norte), Cable HDMI 4K (Sucursal Sur)."
+					},
+					"response": []
+				},
+				{
+					"name": "5. Eliminar Producto 3 (Mouse Óptico)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"3"
+							]
+						},
+						"description": "Elimina el Producto con ID 3 de la base de datos."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
