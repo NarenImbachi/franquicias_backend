@@ -50,6 +50,8 @@ public class ProductService {
         branch.addProduct(newProduct);
 
         branchRepository.save(branch);
+
+        log.info("Nuevo producto '{}' agregado a la sucursal '{}'", newProduct.getName(), branch.getName());
         return productMapper.toDto(newProduct);
     }
 
@@ -59,6 +61,8 @@ public class ProductService {
     @Transactional
     public void deleteProduct(Long productId) {
         Product product = findProductEntityById(productId);
+
+        log.info("Eliminando el producto '{}' de la sucursal '{}'", product.getName(), product.getBranch().getName());
         productRepository.delete(product);
     }
 
@@ -72,6 +76,7 @@ public class ProductService {
         product.updateStock(updateDTO.getNewStock());
 
         Product updatedProduct = productRepository.save(product);
+        log.info("Stock del producto '{}' actualizado a '{}'", product.getName(), updateDTO.getNewStock());
         return productMapper.toDto(updatedProduct);
     }
 
@@ -84,6 +89,8 @@ public class ProductService {
         franchiseService.findFranchiseEntityById(franchiseId);
 
         List<Product> topProducts = productRepository.findTopStockProductsPerBranchForFranchise(franchiseId);
+
+        log.info("Obteniendo el producto con más stock por sucursal para la franquicia con ID {}", franchiseId);
 
         // TODO: ver si puedo hacer el mapeo con mapstruct mas adelante
         return topProducts.stream()
@@ -117,6 +124,8 @@ public class ProductService {
         product.updateName(updateDTO.getNewName());
 
         Product updatedProduct = productRepository.save(product);
+
+        log.info("Nombre del producto '{}' actualizado a '{}'", product.getName(), updateDTO.getNewName());
         return productMapper.toDto(updatedProduct);
     }
 }

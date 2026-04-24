@@ -45,6 +45,7 @@ public class BranchService {
 
         franchiseRepository.save(franchise);
 
+        log.info("Nueva sucursal '{}' agregada a la franquicia '{}'", newBranch.getName(), franchise.getName());
         return branchMapper.toDto(newBranch);
     }
 
@@ -71,6 +72,7 @@ public class BranchService {
         branch.updateName(updateDTO.getNewName());
 
         Branch updatedBranch = branchRepository.save(branch);
+        log.info("Nombre de la sucursal '{}' actualizado a '{}'", branch.getName(), updateDTO.getNewName());
         return branchMapper.toDto(updatedBranch);
     }
 }

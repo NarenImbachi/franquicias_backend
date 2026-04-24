@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  # Servicio para la base de datos PostgreSQL
+  db:
+    image: postgres:16-alpine # Usamos una imagen ligera de Postgres
+    container_name: franquicias-db
+    environment:
+      POSTGRES_DB: franquicias_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432" # Mapea el puerto de la BD al host para poder conectarnos desde fuera
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persiste los datos de la BD
+    restart: unless-stopped
+
+  # Servicio para la aplicación Spring Boot (backend)
+  backend:
+    build:
+      context: . # El Dockerfile está en el directorio actual
+    container_name: franquicias-backend
+    ports:
+      - "8080:8080" # Mapea el puerto de la aplicación
+    environment:
+      # Sobrescribimos las propiedades de application.yaml para conectar con el servicio 'db'
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/franquicias_db
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update # Para que cree/actualice las tablas al iniciar
+    depends_on:
+      - db # Le dice a Docker que inicie 'db' antes que 'backend'
+    restart: unless-stopped
+
+volumes:
+  postgres_data: # Define el volumen para persistencia

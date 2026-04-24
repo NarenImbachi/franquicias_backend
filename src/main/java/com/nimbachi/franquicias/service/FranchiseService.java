@@ -35,6 +35,8 @@ public class FranchiseService {
 
         Franchise franchise = franchiseMapper.toEntity(createDTO);
         Franchise savedFranchise = franchiseRepository.save(franchise);
+
+        log.info("Nueva franquicia '{}' creada con ID {}", savedFranchise.getName(), savedFranchise.getId());
         return franchiseMapper.toDto(savedFranchise);
     }
 
@@ -59,6 +61,8 @@ public class FranchiseService {
         franchise.updateName(updateDTO.getNewName());
 
         Franchise updatedFranchise = franchiseRepository.save(franchise);
+
+        log.info("Nombre de la franquicia '{}' actualizado a '{}'", franchise.getName(), updateDTO.getNewName());
         return franchiseMapper.toDto(updatedFranchise);
     }
 }
