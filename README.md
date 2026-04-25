@@ -18,6 +18,8 @@ La API está viva y accesible públicamente a través de la siguiente URL:
 
 -   **URL Base:** `https://franquiciasbackend-production.up.railway.app`
 
+En caso de que no se obtenga respuesta, es posible que el servidor se haya detenido temporalmente por inactividad, como parte de la optimización de recursos. De ser necesario, pueden notificar al área de soporte a través de correo electrónico para reactivar los servicios (soporte: mi persona).
+
 ### Colección de Postman
 
 Para facilitar las pruebas, se incluye una colección de Postman (`collection.postman.json`) que contiene todas las peticiones a la API. La colección ya está configurada para apuntar a la URL de producción.
